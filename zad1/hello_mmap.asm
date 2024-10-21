@@ -5,7 +5,6 @@
 %define SYS_WRITE 1
 %define SYS_OPEN 2
 %define SYS_MMAP 9
-%define SYS_EXIT 60
 %define FD_STDOUT 1
 
 section .data
@@ -17,7 +16,7 @@ global _start
 
 ; use exit system call to shut down correctly
 exit:
-    mov  rax, SYS_EXIT
+    mov  rax, 60
     xor  rdi, rdi
     syscall
 
